@@ -1,0 +1,19 @@
+{
+    "welcome":"Welcome",
+    "changeLang":"Change Language to Arabic",
+    "introduction" : "bitle Link is a simple link shortner that helps you to shorten your link and share it with your friends. Keep it brief, an easier way to share links",
+    "simple" : "A simple link but powerful tool",
+    "enterUrl" : "Enter your URL here",
+   "shorten_Link": "shorten Link",
+   "All_Urls" : "All Urls",
+   "No_URLs_available" : "No URLs available",
+   "Home_page" : "Home page",
+   "Urls" : "Urls",
+   "Settings" : "Settings",
+   "Change_Language" : "Change Language",
+   "arabic" : "Arabic",
+   "english" : "English"
+
+   
+    
+}
