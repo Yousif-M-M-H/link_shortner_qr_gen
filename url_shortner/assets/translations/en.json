@@ -12,7 +12,15 @@
    "Settings" : "Settings",
    "Change_Language" : "Change Language",
    "arabic" : "Arabic",
-   "english" : "English"
+   "english" : "English",
+   "URL_shortened_successfully!" : "URL shortened successfully!",
+   "error_snackbar" : "Couldn't save the Url, Please check the Url and try again",
+   "Please_enter_a_URL" : "Please enter a URL",
+   "Please_enter_a_valid_URL" : "Please enter a valid URL",
+   "Url_Shortner" : "Url Shortner",
+   "Short_Link_Copied_Successfully" : "Short Link Copied Successfully",
+   "Url_Deleted_Successfully" : "Url Deleted Successfully" ,
+   "change_Theme" : "Change Theme"
 
    
     

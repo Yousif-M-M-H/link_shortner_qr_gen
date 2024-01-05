@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_shortner/features/home/presentation/views/widgets/home_page_introduction.dart';
@@ -15,6 +16,8 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
+  GlobalKey<FormState> _form = GlobalKey<FormState>();
+
   final longUrlController = TextEditingController();
   @override
   void dispose() {
@@ -26,42 +29,46 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Url shortener"),
+        title: Text("Url_Shortner".tr()),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const HomePageIntroduction(),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 80,
-                child: UrlTextField(longUrlController: longUrlController),
-              ),
-              ShortenLinkButton(
-                onPressed: () async {
-                  final longUrl = longUrlController.text;
-                  if (longUrl.isNotEmpty) {
-                    final getUrlCubit = BlocProvider.of<GetUrlCubit>(context);
-                    await getUrlCubit.getShortUrl(longUrl);
+      body: Form(
+        key: _form,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const HomePageIntroduction(),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 80,
+                  child: UrlTextField(longUrlController: longUrlController),
+                ),
+                SizedBox(height: 10),
+                ShortenLinkButton(
+                  onPressed: () async {
+                    if (_form.currentState!.validate()) {
+                      final longUrl = longUrlController.text;
+                      final getUrlCubit = BlocProvider.of<GetUrlCubit>(context);
+                      await getUrlCubit.getShortUrl(longUrl);
 
-                    final getUrlState = getUrlCubit.state;
-                    if (getUrlState is GetUrlSuccess) {
-                      longUrlController.text = '';
-                      final shortUrl = getUrlState.urls[0].resultUrl ?? '';
-                      BlocProvider.of<SaveUrlsCubit>(context)
-                          .saveUrls(shortUrl, longUrl);
+                      final getUrlState = getUrlCubit.state;
+                      if (getUrlState is GetUrlSuccess) {
+                        longUrlController.text = '';
+                        final shortUrl = getUrlState.urls[0].resultUrl ?? '';
+                        BlocProvider.of<SaveUrlsCubit>(context)
+                            .saveUrls(shortUrl, longUrl);
 
-                      SnackbarHelper.showShortenedUrlSnackbar(context);
-                    } else if (getUrlState is GetUrlFailure) {
-                      SnackbarHelper.showShortenedUrlSnackbarFailure(context);
+                        SnackbarHelper.showShortenedUrlSnackbar(context);
+                      } else if (getUrlState is GetUrlFailure) {
+                        SnackbarHelper.showShortenedUrlSnackbarFailure(context);
+                      }
                     }
-                  }
-                },
-              ),
-            ],
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

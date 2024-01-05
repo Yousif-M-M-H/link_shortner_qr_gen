@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_shortner/features/all_urls/presentation/views/widgets/list_tile_container.dart';
 import 'package:url_shortner/features/home/manger/save_urls_cubit/save_urls_cubit.dart';
 
 class DisplayUrlsViewBody extends StatefulWidget {
@@ -15,7 +16,9 @@ class _DisplayUrlsViewBodyState extends State<DisplayUrlsViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("All_Urls".tr()),
+        title: Text(
+          "All_Urls".tr(),
+        ),
       ),
       body: BlocBuilder<SaveUrlsCubit, SaveUrlsState>(
         builder: (context, state) {
@@ -31,16 +34,7 @@ class _DisplayUrlsViewBodyState extends State<DisplayUrlsViewBody> {
                 itemBuilder: (context, index) {
                   final urlPair = urlsList[index];
 
-                  return Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.grey.withOpacity(0.6)),
-                    ),
-                    child: ListTile(
-                      title: Text('${urlPair['short_url']}'),
-                      subtitle: Text('${urlPair['long_url']}'),
-                    ),
-                  );
+                  return ListTileContainer(urlPair: urlPair);
                 },
               ),
             );

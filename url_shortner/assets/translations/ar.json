@@ -5,14 +5,24 @@
     "simple" : "رابط بسيط ولكن أداة قوية",
     "enterUrl" : "ادخل الرابط هنا",
     "shorten_Link" : "تقصير الرابط",
-   "All_Urls" : "جميع الرابط",
+   "All_Urls" : "جميع الروابط",
    "No_URLs_available" : "لا يوجد روابط",
    "Home_page" : "الصفحة الريسية",
    "Urls" : "الرابط",
    "Settings" : "الاعدادات",
    "Change_Language" : "تغيير اللغة",
    "arabic" : "العربية",
-   "english" : "الانجليزية"
+   "english" : "الانجليزية",
+   "URL_shortened_successfully!" : "تم تقصير الرابط بنجاح",
+   "error_snackbar" : "تعذر حفظ عنوان الرابط ، يرجى التحقق من الرابط والمحاولة مرة أخرى ",
+   "Please_enter_a_URL" : "الرجاء قم بادخال رابط",
+   "Please_enter_a_valid_URL" : "الرجاء قم بادخال رابط صحيح",
+   "Url_Shortner" : "مقصر روابط",
+   "Short_Link_Copied_Successfully" : "تم نسخ الرابط القصير بنجاح",
+   "Url_Deleted_Successfully" : "تم حذف الرابط بنجاح",
+   "change_Theme" : "تغيير السمة."
+
+
    
 
 

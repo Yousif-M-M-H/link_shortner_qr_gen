@@ -25,7 +25,7 @@ class _PagesWithNavigationBarState extends State<PagesWithNavigationBar> {
     });
   }
 
-  void _updateState() {
+  void updateState() {
     setState(() {});
   }
 
