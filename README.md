@@ -32,13 +32,5 @@
     </td>
   </tr>
   <tr>
-    <td>
-      <b>Searched Function</b><br>
-      <img src="https://github.com/Yousif-M-M-H/my_notes_app/assets/63748976/77c5a01c-f39f-4457-947f-8e20e8b00fa9" width="300" height="500">
-    </td>
-    <td>
-      <b>Delete Note</b><br>
-      <img src="https://github.com/Yousif-M-M-H/my_notes_app/assets/63748976/081c5eae-372e-4772-8ee2-6e7173538f47" width="300" height="500">
-    </td>
   </tr>
 </table>
